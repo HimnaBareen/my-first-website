@@ -4,44 +4,132 @@
   <meta charset="UTF-8">
   <title>Himna | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f7fa;
-      color: #333;
-      text-align: center;
+      padding: 0;
     }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f0f4f8;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
     header {
-      background: #2c3e50;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
       color: white;
-      padding: 60px 20px;
+      text-align: center;
+      padding: 80px 20px;
     }
     header h1 {
-      margin: 0;
-      font-size: 40px;
+      font-size: 48px;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px rgba(0,0,0,0.2);
     }
     header p {
-      font-size: 18px;
-      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 400;
     }
+    header .btn {
+      margin-top: 20px;
+      background: white;
+      color: #2575fc;
+      padding: 12px 30px;
+      border-radius: 30px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    header .btn:hover {
+      background: #2575fc;
+      color: white;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* SECTIONS */
     section {
-      padding: 40px 20px;
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section h2 {
+      font-size: 36px;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #2575fc;
+      position: relative;
+    }
+    section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #6a11cb;
+      margin: 10px auto 0;
+      border-radius: 2px;
+    }
+
+    /* ABOUT */
+    #about p {
+      text-align: center;
+      font-size: 18px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* SKILLS */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
     }
     .skills span {
-      display: inline-block;
-      background: #3498db;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
       color: white;
-      padding: 8px 15px;
-      margin: 5px;
-      border-radius: 20px;
-      font-size: 14px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: 0.3s;
     }
+    .skills span:hover {
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* PROJECTS */
+    .projects p {
+      font-size: 18px;
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    /* CONTACT */
+    .contact p {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    /* FOOTER */
     footer {
-      background: #2c3e50;
+      background: #2575fc;
       color: white;
-      padding: 20px;
-      font-size: 14px;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      header h1 { font-size: 36px; }
+      header p { font-size: 16px; }
+      section h2 { font-size: 28px; }
     }
   </style>
 </head>
@@ -50,20 +138,21 @@
 
   <header>
     <h1>Hi, I’m Himna </h1>
-    <p>Web Developer | AI & ML Fresher</p>
+    <p>Web Developer | AI & ML Enthusiast</p>
+    <a href="#contact" class="btn">Contact Me</a>
   </header>
 
-  <section>
+  <section id="about">
     <h2>About Me</h2>
     <p>
-      I am a fresher with strong interest in Web Development, 
-      Artificial Intelligence, Machine Learning, TensorFlow, 
-      and Data Science. I love learning new technologies and 
-      building real-world projects.
+      I am a passionate web developer and AI/ML enthusiast. 
+      I enjoy creating modern, responsive websites and working 
+      on AI & ML projects that solve real-world problems. 
+      I love learning new technologies and sharing knowledge.
     </p>
   </section>
 
-  <section>
+  <section id="skills">
     <h2>Skills</h2>
     <div class="skills">
       <span>HTML</span>
@@ -76,14 +165,15 @@
     </div>
   </section>
 
-  <section>
+  <section id="projects">
     <h2>Projects</h2>
-    <p>My First Website (Deployed on Netlify)</p>
+    <p> My First Website (Deployed on Netlify)</p>
   </section>
 
-  <section>
+  <section id="contact" class="contact">
     <h2>Contact</h2>
-    <p>Email:hmskgn2022email@example.com</p>
+    <p>Email: hmskgn2022email@example.com</p>
+    <p>Phone: +91-9344225531</p>
   </section>
 
   <footer>
