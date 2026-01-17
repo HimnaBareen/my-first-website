@@ -1,197 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>HIMNA BAREEN.A | AI Portfolio</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIMNA BAREEN.A | AI Portfolio</title>
 
-<style>
-:root {
-  --gold: linear-gradient(90deg, #f5d76e, #c9a227);
-}
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-* { box-sizing: border-box; }
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top, #111, #000);
-  color: #fff;
-  scroll-behavior: smooth;
-}
+    body {
+      background: radial-gradient(circle at top, #1a1a1a, #000);
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-/* ===== GRADIENT TEXT ===== */
-.gradient-text {
-  background: var(--gold);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+    /* GOLD TEXT */
+    .gold {
+      background: linear-gradient(90deg, #d4af37, #ffd700);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-/* ===== GLASS CARD ===== */
-.glass {
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(14px);
-  border-radius: 18px;
-  padding: 25px;
-  border: 1px solid rgba(255,255,255,0.15);
-  margin-bottom: 25px;
-}
+    /* GLASS CARD */
+    .glass {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 25px;
+      margin: 20px 0;
+      animation: fadeUp 1s ease;
+    }
 
-/* ===== HERO ===== */
-header {
-  text-align: center;
-  padding: 70px 20px;
-}
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-header img {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  border: 3px solid #f5d76e;
-  object-fit: cover;
-}
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30px;
+    }
 
-header h1 {
-  font-size: 2.8rem;
-  margin-top: 20px;
-}
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 3px solid #d4af37;
+      margin-bottom: 20px;
+    }
 
-header p {
-  color: #ccc;
-}
+    header h1 {
+      font-size: 2.6rem;
+      font-weight: 700;
+    }
 
-/* ===== NAV ===== */
-nav a {
-  margin: 8px;
-  padding: 10px 20px;
-  background: var(--gold);
-  color: #000;
-  text-decoration: none;
-  border-radius: 30px;
-  font-weight: 600;
-  display: inline-block;
-  transition: 0.3s;
-}
+    header p {
+      margin-top: 10px;
+      opacity: 0.9;
+    }
 
-nav a:hover { transform: scale(1.08); }
+    nav {
+      margin-top: 25px;
+    }
 
-/* ===== SECTIONS ===== */
-section {
-  max-width: 1100px;
-  margin: auto;
-  padding: 60px 20px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 1s;
-}
+    nav a {
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+    }
 
-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+    section {
+      padding: 60px 10%;
+    }
 
-h2 {
-  font-size: 2.1rem;
-  margin-bottom: 20px;
-}
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
 
-/* ===== PROJECTS ===== */
-.projects {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-}
+    ul {
+      list-style: none;
+    }
 
-.projects img {
-  width: 100%;
-  max-width: 280px;
-  border-radius: 15px;
-  border: 2px solid #f5d76e;
-}
+    ul li {
+      margin-bottom: 10px;
+      opacity: 0.95;
+    }
 
-/* ===== CONTACT FORM ===== */
-form input, form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border-radius: 10px;
-  border: none;
-  outline: none;
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
 
-form button {
-  padding: 12px 25px;
-  background: var(--gold);
-  border: none;
-  border-radius: 30px;
-  font-weight: bold;
-  cursor: pointer;
-}
+    .project img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
 
-/* ===== CHATBOT ===== */
-#chatbot {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 280px;
-  background: rgba(0,0,0,0.85);
-  border: 1px solid #f5d76e;
-  border-radius: 15px;
-  display: none;
-}
+    form input, form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: none;
+      outline: none;
+    }
 
-#chatbot header {
-  padding: 10px;
-  background: var(--gold);
-  color: black;
-  border-radius: 15px 15px 0 0;
-}
+    form button {
+      background: linear-gradient(90deg, #d4af37, #ffd700);
+      color: #000;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
 
-#chatbot .body {
-  padding: 10px;
-  height: 200px;
-  overflow-y: auto;
-  font-size: 14px;
-}
+    footer {
+      text-align: center;
+      padding: 30px;
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
 
-#chatbot input {
-  width: 100%;
-  padding: 8px;
-  border: none;
-  outline: none;
-}
-
-#botBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--gold);
-  border-radius: 50%;
-  padding: 15px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #aaa;
-}
-
-/* MOBILE */
-@media(max-width:600px){
-  header h1 { font-size: 2.1rem; }
-}
-</style>
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+      section { padding: 50px 6%; }
+    }
+  </style>
 </head>
 
 <body>
 
+<!-- HERO -->
 <header>
-  <img src="images/profile.jpg">
-  <h1 class="gradient-text">HIMNA BAREEN.A</h1>
-  <p>AI • ML • Web Developer</p>
+  <img src="profile.jpg" alt="Himna Profile Image">
+  <h1 class="gold">HIMNA BAREEN.A</h1>
+  <p>Final Year B.Sc Artificial Intelligence Student</p>
+  <p>AI • Machine Learning • Web Development</p>
 
   <nav>
     <a href="#about">About</a>
@@ -199,84 +162,93 @@ footer {
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
   </nav>
-
-  <br><br>
-  <a href="resume.pdf" class="gradient-text" style="font-weight:600;">⬇ Download Resume</a>
 </header>
 
-<section id="about" class="glass">
-  <h2 class="gradient-text">About Me</h2>
-  <p>Final-year B.Sc Artificial Intelligence student passionate about AI, ML, creative design, and intelligent systems.</p>
-</section>
-
-<section id="skills" class="glass">
-  <h2 class="gradient-text">Skills</h2>
-  <p>Python • HTML • CSS • Machine Learning • NLP Basics • UI/UX • Video Editing</p>
-</section>
-
-<section id="projects" class="glass">
-  <h2 class="gradient-text">AI Projects</h2>
-  <div class="projects">
-    <img src="images/ai1.jpg">
-    <img src="images/ai2.jpg">
-    <img src="images/ai3.jpg">
+<!-- ABOUT -->
+<section id="about">
+  <div class="glass">
+    <h2 class="gold">About Me</h2>
+    <p>
+      I am a final-year B.Sc Artificial Intelligence student with strong interest in
+      AI tools, Machine Learning, and intelligent system development.
+      I have hands-on experience with Python, HTML, NLP basics, and AI-based projects.
+      I enjoy learning new technologies and building meaningful solutions.
+    </p>
   </div>
 </section>
 
-<section id="contact" class="glass">
-  <h2 class="gradient-text">Contact Me</h2>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="glass">
+    <h2 class="gold">Skills</h2>
+    <ul>
+      <li>Python Programming</li>
+      <li>Machine Learning (Beginner)</li>
+      <li>Natural Language Processing (Basics)</li>
+      <li>HTML & Web Fundamentals</li>
+      <li>UI / UX Designing</li>
+      <li>Video Editing & Graphic Design</li>
+    </ul>
+  </div>
+</section>
 
-  <!-- Replace action URL with Formspree link -->
-  <form action="https://formspree.io/f/yourid" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required>
-    <input type="email" name="email" placeholder="Your Email" required>
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send Message</button>
-  </form>
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="gold">Projects</h2>
+
+  <div class="grid">
+
+    <div class="glass project">
+      <img src="ai1.jpg" alt="Missing Person AI">
+      <h3>Finding Missing Person Using AI</h3>
+      <p>
+        Final year project using AI algorithms for image processing
+        and pattern matching to identify missing persons.
+      </p>
+    </div>
+
+    <div class="glass project">
+      <img src="ai2.jpg" alt="Hospital Management">
+      <h3>Hospital Management System</h3>
+      <p>
+        Designed a DBMS-based system to manage patient records,
+        billing, and efficient data handling.
+      </p>
+    </div>
+
+    <div class="glass project">
+      <img src="ai3.jpg" alt="Salary Prediction">
+      <h3>Job Salary Prediction</h3>
+      <p>
+        Machine learning project to predict salaries based on skills,
+        experience, and job roles using Python.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="glass">
+    <h2 class="gold">Contact Me</h2>
+
+    <p>📧 hmskgn2022@gmail.com</p>
+    <p>📞 9344225531</p>
+    <p>📍 Ambur, Tamil Nadu</p>
+
+    <form>
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <textarea rows="4" placeholder="Your Message"></textarea>
+      <button>Send Message</button>
+    </form>
+  </div>
 </section>
 
 <footer>
-  © 2026 HIMNA BAREEN.A • AI Portfolio
+  © 2026 HIMNA BAREEN.A | AI & Machine Learning Portfolio
 </footer>
-
-<!-- ===== CHATBOT ===== -->
-<div id="botBtn">🤖</div>
-
-<div id="chatbot">
-  <header>AI Assistant</header>
-  <div class="body" id="chatBody">
-    <p>Hello! I’m Himna’s AI bot 👋</p>
-  </div>
-  <input placeholder="Ask me..." onkeydown="botReply(event)">
-</div>
-
-<script>
-// Scroll Animation
-const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
-  sections.forEach(sec => {
-    if (sec.getBoundingClientRect().top < window.innerHeight - 100) {
-      sec.classList.add("show");
-    }
-  });
-});
-
-// Chatbot
-const botBtn = document.getElementById("botBtn");
-const chatbot = document.getElementById("chatbot");
-botBtn.onclick = () => chatbot.style.display =
-  chatbot.style.display === "block" ? "none" : "block";
-
-function botReply(e) {
-  if (e.key === "Enter") {
-    const body = document.getElementById("chatBody");
-    body.innerHTML += `<p><b>You:</b> ${e.target.value}</p>`;
-    body.innerHTML += `<p><b>Bot:</b> I’m an AI portfolio assistant 🤖</p>`;
-    e.target.value = "";
-    body.scrollTop = body.scrollHeight;
-  }
-}
-</script>
 
 </body>
 </html>
