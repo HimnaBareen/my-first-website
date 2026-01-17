@@ -9,9 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
-    /* BASIC RESET */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       font-family: 'Poppins', sans-serif;
       background-color: #0a0a0a;
@@ -32,30 +32,32 @@
       padding: 20px 50px;
       z-index: 100;
     }
+
     nav .logo {
       font-family: 'Playfair Display', serif;
       font-size: 28px;
-      font-weight: 700;
       color: #d4af37;
-      letter-spacing: 1px;
+      font-weight: 700;
     }
+
     nav ul {
       list-style: none;
       display: flex;
       gap: 25px;
     }
+
     nav ul li a {
       color: #f0e6d2;
       text-decoration: none;
       font-weight: 600;
-      transition: 0.3s;
     }
+
     nav ul li a:hover {
       color: #d4af37;
       text-shadow: 0 0 10px #d4af37;
     }
 
-    /* HERO SECTION */
+    /* HERO */
     header {
       height: 100vh;
       display: flex;
@@ -81,32 +83,11 @@
       font-family: 'Playfair Display', serif;
       font-size: 60px;
       color: #d4af37;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 10px #d4af37;
+      margin-bottom: 15px;
     }
 
     header p {
       font-size: 22px;
-      margin-bottom: 30px;
-    }
-
-    header .btn {
-      padding: 15px 30px;
-      font-weight: 600;
-      color: #111;
-      background: #d4af37;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: 0.3s;
-      text-decoration: none;
-    }
-
-    header .btn:hover {
-      background: transparent;
-      color: #d4af37;
-      border: 2px solid #d4af37;
-      box-shadow: 0 0 15px #d4af37;
     }
 
     /* SECTIONS */
@@ -222,7 +203,7 @@
     }
 
     /* RESPONSIVE */
-    @media(max-width:768px){
+    @media (max-width: 768px) {
       header h1 { font-size: 40px; }
       section h2 { font-size: 36px; }
       #about { text-align: center; }
@@ -245,20 +226,19 @@
 
   <!-- HERO -->
   <header>
-    <img src="WhatsApp Image 2026-01-17 .jpg" alt="Himna Bareen" class="hero-img">
+    <img src="1000102086.jpg" alt="Himna Bareen" class="hero-img">
     <h1>Hello, I’m Himna Bareen.A</h1>
     <p>Web Developer | AI & ML Enthusiast</p>
-    <a href="#contact" class="btn">Contact Me</a>
   </header>
 
   <!-- ABOUT -->
   <section id="about">
-    <img src="WhatsApp Image 2026-01-17 .jpg" alt="Himna Bareen">
+    <img src="1000102086.jpg" alt="Himna Bareen">
     <div class="about-text">
       <h2>About Me</h2>
       <p>
         I am Himna Bareen.A, a passionate web developer and AI/ML enthusiast.
-        I create modern, responsive, and elegant websites with intelligent solutions.
+        I build modern, responsive, and elegant digital experiences.
       </p>
     </div>
   </section>
